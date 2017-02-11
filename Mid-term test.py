@@ -16,7 +16,7 @@ for line in data:
     ieach_stu = each_stu[1:]
     ieach_stu = map(int, ieach_stu)   #转化成整数，使其变得可加
     total = sum(ieach_stu)
-    aver = total/num
+    aver = round(float(total)/num,1)                 #平均数保留一位小数
 
     Aver_stu.append(ieach_stu)       #形成一个 新的只有分数的list的list
 
@@ -30,7 +30,7 @@ for line in data:
     Total_stu.append(each_stu)
 
 def f(x):             #Map函数的参数
-    return x/30
+    return round(float(x)/30,1)   #保留一位小数
 
 print Aver_stu         #输出测试
 Average = map(sum,zip(*Aver_stu))
@@ -38,7 +38,7 @@ Final_aver = map(f,Average)
 
 total_aver = sum(Final_aver)  #计算平均数的总数与平均数
 num = len(Final_aver)
-aver_aver = total / num  #计算平均数的总数与平均数
+aver_aver = round(float(total)/num,1)   #计算平均数的总数与平均数，保留一位小数
 
 print '####################'  # Append头和尾部数据
 Final_aver.insert(0,'平均')
